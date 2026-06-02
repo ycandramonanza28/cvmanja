@@ -17,8 +17,8 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: "#about", label: "Tentang Kami" },
-    { href: "#layanan", label: "Layanan" },
+    // { href: "#about", label: "Tentang Kami" },
+    // { href: "#layanan", label: "Layanan" },
     { href: "#katalog", label: "Katalog" },
     { href: "#testimoni", label: "Testimoni" },
     { href: "#faq", label: "FAQ" },
