@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Jasa CV Manja — CV Profesional ATS & Kreatif",
   description: "Layanan pembuatan CV profesional berkualitas tinggi. Template ATS-friendly dan CV Kreatif untuk semua jenjang karir. Proses cepat 24 jam, revisi gratis.",
   keywords: "jasa cv, cv ats, cv kreatif, template cv profesional, buat cv online",
+  icons: [
+    {
+      rel: "icon",
+      url: "/logo.png",
+      type: "image/png",
+    },
+  ],
 };
 
 export default function RootLayout({
