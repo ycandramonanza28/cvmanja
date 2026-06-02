@@ -87,7 +87,7 @@ export default function FAQ() {
         <div className="mt-10 text-center bg-brand-off-white rounded-3xl p-7">
           <p className="text-brand-gray text-sm mb-3">Masih ada pertanyaan lain?</p>
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6285718326571"
             target="_blank"
             rel="noopener"
             className="btn-primary"

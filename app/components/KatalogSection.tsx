@@ -11,6 +11,7 @@ export default function KatalogSection() {
   const [active, setActive] = useState<Category>("semua");
 
   const filtered = active === "semua" ? templates : templates.filter((t) => t.category === active);
+  const displayed = filtered.slice(0, 6); // Tampilkan hanya 6 template
 
   return (
     <section id="katalog" className="py-24 bg-white">
@@ -48,7 +49,7 @@ export default function KatalogSection() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {filtered.map((t) => (
+          {displayed.map((t) => (
             <TemplateCard key={t.id} template={t} />
           ))}
         </div>
@@ -59,7 +60,7 @@ export default function KatalogSection() {
             href="/katalog"
             className="btn-outline inline-flex items-center gap-2 group"
           >
-            Lihat Semua Template
+            Lihat Selengkapnya
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

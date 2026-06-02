@@ -1,11 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -20,6 +23,21 @@ export default function Navbar() {
     { href: "#testimoni", label: "Testimoni" },
     { href: "#faq", label: "FAQ" },
   ];
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    
+    // Jika di halaman katalog, navigate ke home dengan hash
+    if (pathname === "/katalog" && href.startsWith("#")) {
+      router.push(`/${href}`);
+    } else if (href.startsWith("#")) {
+      // Jika di homepage, scroll ke section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <nav
@@ -44,21 +62,21 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (
-            <Link
+            <button
               key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-brand-gray hover:text-brand-teal transition-colors duration-200 relative group"
+              onClick={() => handleNavClick(l.href)}
+              className="text-sm font-medium text-brand-gray hover:text-brand-teal transition-colors duration-200 relative group cursor-pointer border-none bg-none"
             >
               {l.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-brand-teal rounded-full group-hover:w-full transition-all duration-300" />
-            </Link>
+            </button>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6285718326571"
             target="_blank"
             rel="noopener"
             className="btn-primary text-sm py-2.5 px-5"
@@ -84,17 +102,16 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-brand-light-gray px-6 py-4 space-y-3">
           {links.map((l) => (
-            <Link
+            <button
               key={l.href}
-              href={l.href}
-              onClick={() => setMobileOpen(false)}
-              className="block text-sm font-medium text-brand-dark hover:text-brand-teal py-2 transition-colors"
+              onClick={() => handleNavClick(l.href)}
+              className="block w-full text-left text-sm font-medium text-brand-dark hover:text-brand-teal py-2 transition-colors border-none bg-none"
             >
               {l.label}
-            </Link>
+            </button>
           ))}
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6285718326571"
             target="_blank"
             rel="noopener"
             className="btn-primary w-full justify-center mt-2"

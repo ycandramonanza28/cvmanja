@@ -131,7 +131,7 @@ export default function Testimonials() {
               ))}
             </div>
             <div className="text-sm text-brand-dark">
-              <span className="font-bold">2.400+ klien</span> sudah mempercayakan CV mereka ke kami
+              <span className="font-bold">30.000+ klien</span> sudah mempercayakan CV mereka ke kami
             </div>
           </div>
         </div>

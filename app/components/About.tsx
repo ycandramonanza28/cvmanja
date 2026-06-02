@@ -45,8 +45,8 @@ export default function About() {
                 {/* Mini stats grid */}
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { n: "2.400+", l: "CV Selesai" },
-                    { n: "150+", l: "Template" },
+                    { n: "30.000+", l: "CV Selesai" },
+                    { n: "60+", l: "Template" },
                     { n: "98%", l: "Klien Puas" },
                     { n: "50+", l: "Industri" },
                   ].map((s) => (

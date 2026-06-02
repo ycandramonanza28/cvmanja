@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 
 const stats = [
-  { value: "2.400+", label: "CV Dibuat" },
+  { value: "30.000+", label: "CV Dibuat" },
   { value: "98%", label: "Klien Puas" },
   { value: "24 Jam", label: "Pengerjaan Cepat" },
   { value: "4.9★", label: "Rating Rata-rata" },
@@ -66,7 +66,7 @@ export default function Hero() {
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6285718326571"
                 target="_blank"
                 rel="noopener"
                 className="btn-outline"

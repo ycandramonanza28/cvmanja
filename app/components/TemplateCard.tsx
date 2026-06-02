@@ -88,21 +88,21 @@ export default function TemplateCard({ template }: Props) {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-5xl rounded-[32px] bg-white shadow-2xl overflow-hidden"
+            className="relative w-full max-w-md sm:max-w-2xl lg:max-w-3xl rounded-2xl sm:rounded-[32px] bg-white shadow-2xl overflow-hidden my-auto"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition hover:bg-brand-light-gray"
+              className="absolute right-2 top-2 sm:right-4 sm:top-4 z-10 inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition hover:bg-brand-light-gray hover:scale-110"
               aria-label="Close detail popup"
             >
-              <X size={18} />
+              <X size={18} className="sm:w-5 sm:h-5" />
             </button>
 
             <div className="w-full overflow-hidden">
@@ -112,6 +112,7 @@ export default function TemplateCard({ template }: Props) {
                   alt={`${template.name} preview`}
                   fill
                   className="absolute inset-0 object-cover"
+                  priority
                 />
               </div>
             </div>
